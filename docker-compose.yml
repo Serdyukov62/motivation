@@ -8,7 +8,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.motivation.rule=Host(`motivation.alexmatveikin.ru`)"
       - "traefik.http.routers.motivation.entrypoints=web"
-      - "traefik.http.routers.motivation-secure.rule=Host(`motivation.localhost`)"
+      - "traefik.http.routers.motivation-secure.rule=Host(`motivation.alexmatveikin.ru`)"
       - "traefik.http.routers.motivation-secure.entrypoints=websecure"
       - "traefik.http.routers.motivation-secure.tls=true"
       - "traefik.http.services.motivation.loadbalancer.server.port=8084"

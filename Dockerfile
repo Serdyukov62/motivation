@@ -20,7 +20,7 @@ RUN npx tsc
 RUN npm install -g http-server
 
 # Открываем порт 8080
-EXPOSE 8080
+EXPOSE 8084
 
 # Запускаем HTTP сервер для раздачи файлов из папки src
 CMD ["http-server", "src", "-p", "8084"]
