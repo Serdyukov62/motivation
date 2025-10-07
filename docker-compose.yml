@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  motivation:
+    build: .
+    container_name: motivation
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.motivation.rule=Host(`motivation.alexmatveikin.ru`)"
+      - "traefik.http.routers.motivation.entrypoints=web"
+      - "traefik.http.routers.motivation-secure.rule=Host(`motivation.localhost`)"
+      - "traefik.http.routers.motivation-secure.entrypoints=websecure"
+      - "traefik.http.routers.motivation-secure.tls=true"
+      - "traefik.http.services.motivation.loadbalancer.server.port=8084"
+      - "traefik.http.middlewares.motivation-redirect.redirectscheme.scheme=https"
+      - "traefik.http.routers.motivation.middlewares=motivation-redirect"
+
+    networks:
+      - proxy
+    restart: unless-stopped
+
+networks:
+  proxy:
+    external: true
