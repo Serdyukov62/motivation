@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "start": "http-server src -p 8080",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server src -p 8084"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +14,7 @@
     "typescript": "^5.9.3"
   },
   "devDependencies": {
+    "@types/youtube": "^0.1.2",
     "http-server": "^14.1.1"
   }
 }

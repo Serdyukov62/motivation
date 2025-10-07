@@ -10,3 +10,43 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.when {
+    opacity: 0;
+    font-size: 0;
+    transition: opacity 5s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+    margin: 0;
+    font-size: 12rem;
+    color: #fff;
+    transition: opacity 5s ease-in-out;
+}
+
+.motivation {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+}
+
+.iframe {
+    width: 38rem;
+    height: 38rem;
+}
+
+.button {
+    width: 38rem;
+    padding: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    background-image: url('https://avatars.mds.yandex.net/i?id=39385a1044166fe6bc9011b5ac1741522300e231-5734461-images-thumbs&n=13');
+
+    &:hover{
+        cursor: pointer;
+    }
+}

@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.ico">
     <title>Motivation</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <section class="main">
-        <div>
-            <iframe
-             id="iframe"
-             frameborder="0"
-             hidden
-             ></iframe>
-            <button  id="playBtn">Play</button>
+        <div class="motivation">
+            <h1 class="when">WHEN</h1>
+            <div id="player"></div>
+            <button class="button" id="playBtn"></button>
         </div>
     </section>
 </body>
-<script type="module" src="script.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script type="module" src="../dist/script.js"></script>
+
 </html>
