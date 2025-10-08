@@ -19,10 +19,9 @@ jobs:
           key: ${{ secrets.SERVER_SSH_KEY }}
           script: |
             echo "=== 🔄 Starting deployment ==="
-            cd /DATA/docker/motivation
+            git clone -b master git@github.com:Serdyukov62/motivation.git /DATA/docker/motivation
 
-            echo "📥 Pulling latest code..."
-            git pull --force
+            cd /DATA/docker/motivation
 
             echo "🐳 Rebuilding Docker containers..."
             docker compose down
