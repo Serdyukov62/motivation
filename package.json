@@ -4,8 +4,8 @@
   "main": "script.js",
   "type": "module",
   "scripts": {
-    "build": "npx tsc",
-    "copy": "mkdir -p dist/assets && cp src/*.{html,ico,css} dist/ && cp src/assets/*.jpg dist/assets",
+    "build": "npx tsc && npm run copy",
+    "copy": "mkdir -p dist/assets && cp src/*.html dist/ && cp src/*.ico dist/ && cp src/*.css dist/ && cp -r src/assets/* dist/assets/",
     "start": "http-server src -p 8084"
   },
   "author": "",

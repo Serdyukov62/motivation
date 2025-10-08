@@ -15,7 +15,6 @@ COPY . .
 
 # Компилируем TypeScript в JavaScript
 RUN npm run build
-RUN npm run copy
 
 # Устанавливаем простой HTTP сервер для раздачи статических файлов
 RUN npm install -g http-server
