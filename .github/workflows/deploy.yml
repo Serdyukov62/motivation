@@ -22,7 +22,7 @@ jobs:
             cd /DATA/docker/motivation
 
             echo "📥 Pulling latest code..."
-            git pull
+            git pull --force
 
             echo "🐳 Rebuilding Docker containers..."
             docker compose down
