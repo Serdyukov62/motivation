@@ -5,8 +5,8 @@ let lastSelectedIndex = -1;
 
 (window as any).onYouTubeIframeAPIReady = function () {
     player = new YT.Player('player', {
-        height: '608',
-        width: '608',
+        height: '100%',
+        width: '100%',
         videoId: randomClip(LINK_VIDEO),
         playerVars: {
             'autoplay': 1,

@@ -4,11 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-image: url('./assets/image-mesh-gradient.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(to right, #8D7DC6, #9185D0, #133062);
 }
 
 .when {
@@ -23,7 +19,12 @@
     font-size: 12rem;
     color: #fff;
     transition: opacity 5s ease-in-out;
+
+    @media (width < 600px) {
+        font-size: 6rem;
+    }
 }
+
 
 .motivation {
     display: flex;
@@ -32,13 +33,14 @@
     align-items: center;
 }
 
-.iframe {
-    width: 38rem;
-    height: 38rem;
+.player {
+    width: 100%;
+    height: 30rem;
 }
 
 .button {
-    width: 38rem;
+    width: 100%;
+    max-width: 38rem;
     padding: 1rem;
     background-position: center;
     background-repeat: no-repeat;
