@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // File Layout
-    "rootDir": "./src",
+    "rootDir": "./src/scripts",
     "outDir": "./dist",
 
     // Environment Settings
@@ -36,5 +36,5 @@
   },
   "include": [
     "src/**/*"
-, "dist/script.js"  ]
+, "src/script.js"  ]
 }

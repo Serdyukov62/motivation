@@ -16,7 +16,7 @@ let lastSelectedIndex = -1;
 }
 
 const playBtn = document.getElementById('playBtn') as HTMLButtonElement;
-const when = document.getElementsByClassName('when')[0] as HTMLHeadingElement
+const moreContainer = document.getElementById('moreContainer') as HTMLDivElement
 
 const LINK_VIDEO =
 [
@@ -24,6 +24,23 @@ const LINK_VIDEO =
  '0bd3Zgf964k',
  'rdPfJx64CO0',
 ];
+
+function createPositionForMore() {
+    const newP = document.createElement('p');
+    const topValue = Math.random() * (60 - 10) + 10;
+    const leftValue = Math.random() * (80 - 10) + 10;
+    const transformValue = Math.random() * (-50 - 10) + 10;
+
+
+    newP.className = 'more';
+    newP.textContent = 'more?';
+    newP.style.top = `${topValue}rem`
+    newP.style.left = `${leftValue}rem`
+    newP.style.transform = `rotate(${transformValue}deg)`
+
+
+    moreContainer.appendChild(newP);
+}
 
 const randomClip = (clipList: string[]) => {
     let randomIndex;
@@ -39,9 +56,5 @@ playBtn.addEventListener('click', () => {
     const videoId = randomClip(LINK_VIDEO)
     if (videoId != undefined)
     player.loadVideoById(videoId)
-    if (videoId === '0bd3Zgf964k'){
-        when.classList.add('active')
-    } else {
-        when.classList.remove('active')
-    }
+    createPositionForMore()
 })
