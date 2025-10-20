@@ -12,19 +12,9 @@ const LINK_VIDEO =
  './video/3.mp4',
 ];
 
-function createPositionForMore() {
-    const newP = document.createElement('p');
-    const topValue = Math.random() * (60 - 10) + 10;
-    const leftValue = Math.random() * (80 - 10) + 10;
-    const transformValue = Math.random() * (-50 - 10) + 10;
+function addParagraph(topValue: number,leftValue: number,transformValue: number) {
     const count = moreContainer.querySelectorAll('p').length;
-
-    newP.className = 'more';
-    newP.textContent = 'more?';
-    newP.style.top = `${topValue}rem`
-    newP.style.left = `${leftValue}rem`
-    newP.style.transform = `rotate(${transformValue}deg)`
-
+    const newP = document.createElement('p');
 
     switch (true) {
         case (count > 9):
@@ -39,8 +29,27 @@ function createPositionForMore() {
         default:
             break;
     }
+    newP.className = 'more';
+    newP.textContent = 'more?';
+    newP.style.top = `${topValue}px`;
+    newP.style.left = `${leftValue}px`;
+    newP.style.transform = `rotate(${transformValue}deg)`;
+    return newP;
+}
 
-    moreContainer.appendChild(newP);
+function createPositionForMore() {
+    if (moreContainer.querySelectorAll('p').length > 11){
+        return;
+    }
+    const blockWidth = 120;
+    const blockHeight = 40;
+    const leftValue = Math.random() * (window.innerWidth - blockWidth);
+    const topValue = Math.random() * (window.innerHeight - blockHeight);
+    const transformValue = Math.random() * (-50 - 10) + 10;
+
+    if ((leftValue + blockWidth < window.innerWidth) && (topValue + blockHeight < window.innerHeight)) {
+        moreContainer.appendChild(addParagraph(topValue,leftValue,transformValue));
+    }
 }
 
 function getRandomIndexExceptPrev(prev: number, max: number) {
