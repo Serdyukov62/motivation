@@ -1,11 +1,11 @@
 @import url(./reset.css);
 
 .main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center center;
     background: linear-gradient(to right, #8D7DC6, #9185D0, #133062);
     position: relative;
+    height: 100vh;
 }
 
 .more {
