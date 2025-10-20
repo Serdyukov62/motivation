@@ -23,4 +23,4 @@ RUN npm install -g http-server
 EXPOSE 8084
 
 # Запускаем HTTP сервер для раздачи файлов из папки src
-CMD ["http-server", "src", "-p", "8084"]
+CMD ["http-server", "dist", "-p", "8084"]
