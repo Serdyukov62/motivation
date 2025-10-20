@@ -20,7 +20,7 @@ jobs:
           script: |
             echo "=== 🔄 Starting deployment ==="
             cd /DATA/docker/motivation
-            sudo git pull
+            git pull
 
             echo "🐳 Rebuilding Docker containers..."
             docker compose up -d --build
