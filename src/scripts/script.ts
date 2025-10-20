@@ -51,10 +51,16 @@ function getRandomIndexExceptPrev(prev: number, max: number) {
     return randomIndex;
 }
 
-playBtn.addEventListener('click', () => {
+function addSrc() {
     const nextIndex = getRandomIndexExceptPrev(lastVideoIndex, LINK_VIDEO.length);
     lastVideoIndex = nextIndex;
     player.src = LINK_VIDEO[nextIndex] || '';
+}
+
+addSrc();
+
+playBtn.addEventListener('click', () => {
+    addSrc();
     player.load();
     player.play();
     createPositionForMore()
