@@ -2,7 +2,7 @@
   "compilerOptions": {
     // File Layout
     "rootDir": "./src/scripts",
-    "outDir": "./dist",
+    "outDir": "./src",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
@@ -34,7 +34,6 @@
     "moduleDetection": "force",
     "skipLibCheck": true,
   },
-  "include": [
-    "src/**/*"
-, "src/script.js"  ]
+  "include": ["src/**/*", "src/script.js"],
+  "exclude": []
 }
